@@ -1,3 +1,10 @@
+Hi everybody, This is the Poem Translator app for Hindi to Hinglish
+where i used LLM + Front end UI(alternative we can use strealit).
+
+I'm uploading the Demo video + result Screenshots in folders please go and watch.
+
+Thanks Enjoy!
+
 # Hindi Poem Translator App
 
 A simple AI-powered app to:
