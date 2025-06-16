@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🧠 Hindi Poem AI Translator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f7cac9 0%, #fff6e0 50%, #92a8d1 100%);
+            min-height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .poem-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .poem-bg span {
+            position: absolute;
+            font-size: 3.5rem;
+            opacity: 0.07;
+            font-family: 'Roboto Mono', monospace;
+            color: #5d3a00;
+            user-select: none;
+            animation: float 12s infinite linear;
+        }
+        .poem-bg span:nth-child(1) { left: 10%; top: 15%; animation-delay: 0s;}
+        .poem-bg span:nth-child(2) { left: 70%; top: 25%; animation-delay: 2s;}
+        .poem-bg span:nth-child(3) { left: 40%; top: 60%; animation-delay: 4s;}
+        .poem-bg span:nth-child(4) { left: 80%; top: 75%; animation-delay: 6s;}
+        .poem-bg span:nth-child(5) { left: 20%; top: 80%; animation-delay: 8s;}
+        @keyframes float {
+            0% { transform: translateY(0);}
+            50% { transform: translateY(-30px);}
+            100% { transform: translateY(0);}
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background: rgba(255,255,255,0.97);
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+            padding: 2.7rem 2.2rem 2.2rem 2.2rem;
+            max-width: 540px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 2.3rem;
+            color: #5d3a00;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        p {
+            color: #444;
+            margin-bottom: 2rem;
+            font-size: 1.13rem;
+        }
+        .upload-label {
+            display: inline-block;
+            background: linear-gradient(90deg, #f7cac9 60%, #ffe5b4 100%);
+            color: #5d3a00;
+            padding: 0.8rem 1.3rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(247,202,201,0.15);
+            border: 2px dashed #f7cac9;
+        }
+        .upload-label:hover {
+            background: linear-gradient(90deg, #f5b7b1 60%, #ffe5b4 100%);
+            box-shadow: 0 4px 16px rgba(247,202,201,0.22);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #92a8d1 60%, #b5ead7 100%);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.7rem;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(146,168,209,0.13);
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #6c7ea6 60%, #b5ead7 100%);
+            box-shadow: 0 4px 16px rgba(146,168,209,0.22);
+        }
+        .result-box {
+            background: #f9f6f2;
+            border-radius: 14px;
+            margin-top: 2.2rem;
+            padding: 1.7rem 1.1rem;
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.09);
+            text-align: left;
+            font-size: 1.12rem;
+            animation: fadeIn 0.7s;
+        }
+        .result-box h2 {
+            color: #5d3a00;
+            font-size: 1.22rem;
+            margin-bottom: 1rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+        pre {
+            font-family: 'Roboto Mono', monospace;
+            background: none;
+            color: #222;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 1.11rem;
+            margin: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Interactive hover effect for card */
+        .card:hover {
+            box-shadow: 0 12px 36px rgba(44, 62, 80, 0.22);
+            transform: translateY(-3px) scale(1.012);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        /* Responsive */
+        @media (max-width: 1000) {
+            .card {
+                padding: 1.2rem 0.5rem;
+            }
+            .poem-bg span {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poem-bg">
+        <span>कविता</span>
+        <span>✒️</span>
+        <span>शब्द</span>
+        <span>🌸</span>
+        <span>अनुवाद</span>
+    </div>
+    <div class="wrapper">
+        <div class="card">
+            <h1>📜 Hindi Poem Translator</h1>
+
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label class="upload-label">
+                    <input type="file" name="image" accept="image/*" required>
+                    📷 Choose Poem Image
+                </label>
+                <button type="submit">✨ Translate</button>
+            </form>
+
+            {% if result %}
+            <div class="result-box">
+                <h2>🔍 Translation Result</h2>
+                <pre>{{ result }}</pre>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

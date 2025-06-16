@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(135deg, #f7cac9 0%, #92a8d1 100%);
+    font-family: 'Inter', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+}
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.2rem;
+    color: #5d3a00;
+    margin-bottom: 0.5rem;
+}
+p {
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+.upload-label {
+    display: inline-block;
+    background: #f7cac9;
+    color: #5d3a00;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: background 0.2s;
+}
+.upload-label:hover {
+    background: #f5b7b1;
+}
+input[type="file"] {
+    display: none;
+}
+button[type="submit"] {
+    background: #92a8d1;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background 0.2s;
+}
+button[type="submit"]:hover {
+    background: #6c7ea6;
+}
+.result-box {
+    background: #f9f6f2;
+    border-radius: 12px;
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+    text-align: left;
+    font-size: 1.08rem;
+}
+.result-box h2 {
+    color: #5d3a00;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace;
+}
+pre {
+    font-family: 'Roboto Mono', monospace;
+    background: none;
+    color: #222;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 1.08rem;
+    margin: 0;
+}
+@media (max-width: 600px) {
+    .card {
+        padding: 1.2rem 0.5rem;
+    }
+}
