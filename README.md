@@ -7,9 +7,6 @@ I'm uploading the Demo video + result Screenshots in folders please go and watch
 
 [Click here to watch the demo video](https://drive.google.com/file/d/1OdCv43DGzxiwEOiPTzFNrYoGjgLjJKzc/view?usp=sharing)
 
-
-## 🎥 Demo Video
-
 [![Watch Demo](https://img.icons8.com/ios-filled/500/play-button-circled.png)](https://drive.google.com/file/d/1OdCv43DGzxiwEOiPTzFNrYoGjgLjJKzc/view?usp=sharing)
 
 
